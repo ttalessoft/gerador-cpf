@@ -16,9 +16,9 @@ function App() {
   const [qnt, setQnt] = useState<number>(1);
   const [cpfs, setCpfs] = useState<string[]>([]);
 
-  const toast = useRef(v4());
+  const toast = useRef<any>(null);
   const showSuccess = () => {
-    toast.current.show({
+    toast?.current?.show({
       severity: "success",
       summary: "Copiado",
       detail: "O cpf copiado com sucesso!",
