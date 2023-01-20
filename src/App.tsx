@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { InputNumber } from "primereact/inputnumber";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
+import { v4 } from "uuid";
 
 import { cpf } from "cpf-cnpj-validator";
 
@@ -18,9 +19,9 @@ function App() {
   const toast = useRef(v4());
   const showSuccess = () => {
     toast.current.show({
-      severity: "info",
+      severity: "success",
       summary: "Copiado",
-      detail: "O cpf clicado foi copiado com sucesso!",
+      detail: "O cpf copiado com sucesso!",
       life: 4000,
     });
   };
@@ -93,6 +94,3 @@ function App() {
 }
 
 export default App;
-function v4(): any {
-  throw new Error("Function not implemented.");
-}
